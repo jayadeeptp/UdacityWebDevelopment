@@ -32,13 +32,14 @@ months = ['January',
 ##        print 'None'
 ##        return 'None'
        
-##month_abbvs = dict((m[:3].lower(),m) for m in months)
+month_abbvs = dict((m[:3].lower(),m) for m in months)
 
 def valid_month(month):
     if month:
-        cap_month=month.capitalize()
-        if cap_month in months:
-            return cap_month
+        short_month=month[:3].lower()
+        return month_abbvs.get(short_month)
+
+print valid_month('feb')
 
 # valid_month("january") => "January"    
 # valid_month("January") => "January"
