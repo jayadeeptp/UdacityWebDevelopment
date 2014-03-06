@@ -9,18 +9,18 @@
 # the name of the month with the first letter 
 # capitalized.
 #
-months = ['January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December']
+#months = ['January',
+#          'February',
+#          'March',
+#          'April',
+#          'May',
+#          'June',
+#          'July',
+#          'August',
+#          'September',
+#          'October',
+#          'November',
+#          'December']
           
 ##def valid_month(month):
 ##    this_month=month.lower()
@@ -32,14 +32,25 @@ months = ['January',
 ##        print 'None'
 ##        return 'None'
        
-month_abbvs = dict((m[:3].lower(),m) for m in months)
+##month_abbvs = dict((m[:3].lower(),m) for m in months)
+##
+##def valid_month(month):
+##    if month:
+##        short_month=month[:3].lower()
+##        return month_abbvs.get(short_month)
 
-def valid_month(month):
-    if month:
-        short_month=month[:3].lower()
-        return month_abbvs.get(short_month)
+def valid_day(day):
+    if day and day.isdigit():
+        if int(day) in range (1,32):
+            return int(day)
+        else:
+            return 
+    else:
+        return 
 
-print valid_month('feb')
+print valid_day(',1')
+
+##print valid_month('feb')
 
 # valid_month("january") => "January"    
 # valid_month("January") => "January"
