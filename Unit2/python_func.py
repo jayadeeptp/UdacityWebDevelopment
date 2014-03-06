@@ -38,22 +38,24 @@
 ##    if month:
 ##        short_month=month[:3].lower()
 ##        return month_abbvs.get(short_month)
-
-def valid_day(day):
-    if day and day.isdigit():
-        if int(day) in range (1,32):
-            return int(day)
-        else:
-            return 
-    else:
-        return 
-
-print valid_day(',1')
-
 ##print valid_month('feb')
 
-# valid_month("january") => "January"    
-# valid_month("January") => "January"
-# valid_month("foo") => None
-# valid_month("") => None
+##def valid_day(day):
+##    if day and day.isdigit():
+##        if int(day) in range (1,32):
+##            return int(day)
+##        else:
+##            return 
+##    else:
+##        return 
+
+##print valid_day(',1')
+
+def valid_year(year):
+    if year and year.isdigit():
+        if int(year)>1900 and int(year)<2020:
+            return int(year)
+
+print valid_year('1990')
+
 
