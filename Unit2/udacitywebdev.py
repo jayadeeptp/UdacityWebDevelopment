@@ -1,4 +1,5 @@
 import webapp2
+import python_func
 
 form = """
 <form method = "post" > 
@@ -22,10 +23,17 @@ form = """
 class MainPage(webapp2.RequestHandler):
 
     def get(self):
-        self.response.write(form)
+        self.response.out.write(form)
 
     def post(self):
-        self.response.write("Thanks! That's a totally valid day!")
+        user_month = python_func.valid_month(self.request.get('month'))
+        user_day = python_func.valid_day(self.request.get('day'))
+        user_year = python_func.valid_year(self.request.get('year'))
+
+        if not(user_month and user_day and user_year):
+            self.response.out.write(form)
+        else:
+            self.response.write("Thanks! That's a totally valid day!")
 
 application = webapp2.WSGIApplication([
     ('/', MainPage),
