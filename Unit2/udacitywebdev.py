@@ -48,9 +48,14 @@ class MainPage(webapp2.RequestHandler):
             self.write_form("That doesn't look valid to me, friend",
                             user_month,user_day,user_year)
         else:
-            self.response.write("Thanks! That's a totally valid day!")
+            self.redirect('/thanks')
+
+class ThanksHandler(webapp2.RequestHandler):            
+    def get(self):
+        self.response.write("Thanks! That's a totally valid day!")
 
 application = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/thanks', ThanksHandler),
 
 ], debug=True)
