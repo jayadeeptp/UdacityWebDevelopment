@@ -32,3 +32,12 @@ def valid_year(year):
         if int(year)>1900 and int(year)<2020:
             return int(year)
 
+import cgi
+def escape_html(s):
+##    for (i,o) in (("&", "&amp;"),
+##                  ("<", "&lt;"),
+##                  (">", "&gt;"),
+##                  ('"', "&quot;")):
+##        s=s.replace(i,o)
+    return cgi.escape(s, quote = True)
+##    return s

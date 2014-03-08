@@ -28,9 +28,9 @@ class MainPage(webapp2.RequestHandler):
 
     def write_form(self,error="", month="", day="", year=""):
         self.response.out.write(form % {"error":error,
-                                        "month":month,
-                                        "day":day,
-                                        "year":year})
+                                        "month":python_func.escape_html(month),
+                                        "day":python_func.escape_html(day),
+                                        "year":python_func.escape_html(year)})
 
     def get(self):
         self.write_form()
